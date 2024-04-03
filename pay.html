@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url('https://c8.alamy.com/comp/2A8RR79/abstract-online-shopping-mobile-payment-with-qr-code-design-concept-element-colorful-cart-paper-bag-on-wooden-table-background-top-view-flat-lay-2A8RR79.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #online_payment_fields,
+        #cash_on_delivery_fields {
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Payment Method</h1>
+    <form action="process_payment.php" method="post">
+        <p>Select Payment Method:</p>
+
+        <!-- Radio buttons for payment method selection -->
+        <input type="radio" id="cash_on_delivery" name="payment_method" value="cash_on_delivery" required>
+        <label for="cash_on_delivery">Cash on Delivery</label><br>
+
+        <input type="radio" id="online_payment" name="payment_method" value="online_payment" required>
+        <label for="online_payment">Online Payment</label><br>
+
+        <!-- Online payment fields (hidden by default) -->
+        <div id="online_payment_fields" style="display:none;">
+            <p>Online Payment Details:</p>
+            <!-- Add your online payment fields here, such as credit card information, PayPal, etc. -->
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number"><br>
+00000
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="text" id="expiry_date" name="expiry_date"><br>
+        </div>
+
+        <!-- Cash on Delivery fields (hidden by default) -->
+        <div id="cash_on_delivery_fields" style="display:none;">
+            <p>Cash on Delivery Details:</p>
+            <!-- Add any relevant COD fields here, such as delivery address, contact info, etc. -->
+            <label for="delivery_address">Delivery Address:</label>
+            <textarea id="delivery_address" name="delivery_address" rows="4" cols="50"></textarea><br>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" onclick="window.location.href ='thankyou.html'" value="Submit">
+        
+    </form>
+    <div style="text-align: center; background-color: #f0f0f0; padding: 10px;">
+                <p>Thank you for shopping with us! 😀</p>
+            </div>
+
+    <script>
+        // JavaScript to show/hide payment fields based on user's choice
+        const onlinePaymentRadio = document.getElementById("online_payment");
+        const cashOnDeliveryRadio = document.getElementById("cash_on_delivery");
+        const onlinePaymentFields = document.getElementById("online_payment_fields");
+        const cashOnDeliveryFields = document.getElementById("cash_on_delivery_fields");
+
+        onlinePaymentRadio.addEventListener("change", () => {
+            onlinePaymentFields.style.display = "block";
+            cashOnDeliveryFields.style.display = "none";
+        });
+
+        cashOnDeliveryRadio.addEventListener("change", () => {
+            onlinePaymentFields.style.display = "none";
+            cashOnDeliveryFields.style.display = "block";
+        });
+    </script>
+</body>
+</html>

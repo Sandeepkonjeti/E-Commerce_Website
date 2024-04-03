@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+        }
+    
+
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product:hover {
+            background-color: silver;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin: 0;
+        }
+
+        .product p {
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> NSKY Online Shopping</h1>
+        <nav>
+            <a href="index2.html">Home</a>
+            <a href="product2.html">Products</a>
+            <a href="cart2.html">Cart</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="products">
+
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/f/w/z/-original-imagzdshmgsyhpdh.jpeg?q=90" alt="Shirt 2"onclick="showImageModal('https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/f/w/z/-original-imagzdshmgsyhpdh.jpeg?q=90')">
+                <h3>Stylish shirt</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1399</p>
+                <button onclick="addToCart('Stylish shirt', 1399)">Add to Cart</button>
+        
+            </div>
+             <!-- Product 6 -->
+             <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/backpack/z/x/j/8-bp-rexine-1500-black-35l-13-bp-rexine-1500-black-35l-backpack-original-imaghpvqnwymamwz.jpeg?q=70" alt="Shirt 2"onclick="showImageModal('https://rukminim2.flixcart.com/image/832/832/xif0q/backpack/z/x/j/8-bp-rexine-1500-black-35l-13-bp-rexine-1500-black-35l-backpack-original-imaghpvqnwymamwz.jpeg?q=70')">
+                <h3>WROGN </h3>
+                <p>Description: Large 35 L Laptop Backpack BP/REXINE/1500/BLACK-35L  (Black).</p>
+                <p>Price: ₹1100</p>
+                <button onclick="addToCart('WROGN ', 1100)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/h/z/y/-original-imagrcjkmbhffvqh.jpeg?q=70" alt="Shirt 2"onclick="showImageModal('https://rukminim2.flixcart.com/image/612/612/xif0q/watch/h/z/y/-original-imagrcjkmbhffvqh.jpeg?q=70')">
+                <h3>Analog Watch - For Men </h3>
+                <p>Description: Water Resistant: Yes
+                                Shock Resistance: NO.</p>
+                <p>Price: ₹899</p>
+                <button onclick="addToCart('Analog Watch - For Men', 899)">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://lowpricesaree.in/wp-content/uploads/2021/08/wrogn-men-burgundy-slim-fit-solid-casual-shirt.jpg" alt="Shirt 2"onclick="showImageModal('https://lowpricesaree.in/wp-content/uploads/2021/08/wrogn-men-burgundy-slim-fit-solid-casual-shirt.jpg')">
+                <h3> Burgundy Shirt</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1199</p>
+                <button onclick="addToCart(' Burgundy Shirt', 1199)">Add to Cart</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="data:image/jpeg;base64,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" alt="Shirt 2"onclick="showImageModal('data:image/jpeg;base64,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')">
+                <h3>WROGN</h3>
+                <p>Description: Men Olive green Solid Sneakers</p>
+                <p>Price: ₹1499</p>
+                <button onclick="addToCart('WROGN', 1499)">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/1536592/2018/10/17/e5ad6a20-5fec-4923-aabe-46db9a694e721539765741785-WROGN-Men-Black-Slim-Fit-Checked-Casual-Shirt-68315397657395-1.jpg" alt="Shirt 2"onclick="showImageModal('https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/1536592/2018/10/17/e5ad6a20-5fec-4923-aabe-46db9a694e721539765741785-WROGN-Men-Black-Slim-Fit-Checked-Casual-Shirt-68315397657395-1.jpg')">
+                <h3>Checks Shirt</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹959</p>
+                <button onclick="addToCart('Checks Shirt', 959)">Add to Cart</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WGTS0579/1.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WGTS0579/1.jpeg')">
+                <h3>Wrogn Men Gray Cut & Sew Slim Fit Polo Collar T-Shirts</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹699</p>
+                <button onclick="addToCart('Wrogn Men Gray Cut & Sew Slim Fit Polo Collar T-Shirts', 699)">Add to Cart</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPJN2140S.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPJN2140S.jpeg')">
+                <h3>Wrogn Men Slim Fit Mid Rise Solid Blue Jeans</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1399</p>
+                <button onclick="addToCart('Wrogn Men Slim Fit Mid Rise Solid Blue Jeans', 1399)">Add to Cart</button>
+            </div>
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPJN2062S.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPJN2062S.jpeg')">
+                <h3>Wrogn Men Slim Fit Mid Rise Acid Washed Blue Jeans</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹859</p>
+                <button onclick="addToCart('Wrogn Men Slim Fit Mid Rise Acid Washed Blue Jeans', 859 )">Add to Cart</button>
+            </div>
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WNJK6009.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WNJK6009.jpeg')">
+                <h3>Wrogn Men Olive Camouflage Jacket</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1999</p>
+                <button onclick="addToCart('Wrogn Men Olive Camouflage Jacket', ₹1999)" >Add to Cart</button>
+            </div>
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://5.imimg.com/data5/RH/WI/AM/ANDROID-76271502/product-jpeg.jpg" alt="Shirt 1"onclick="showImageModal('https://5.imimg.com/data5/RH/WI/AM/ANDROID-76271502/product-jpeg.jpg')">
+                <h3>Polo T-shirt</h3>
+                <p>Description: This is a stylish shirt.</p>
+                <p>Price: ₹499</p>
+                <button onclick="addToCart('Polo T-shirt',₹499)">Add to Cart</button>
+            </div>
+            <!-- Product 9 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOKJ3228S/1.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOKJ3228S/1.jpeg')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹799</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger',₹799)">Add to Cart</button>
+            </div>
+            <!-- Product 10 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOSX007/1.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOSX007/1.jpeg')">
+                <h3>Wrogn Men Low Cut Socks</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1199</p>
+                <button onclick="addToCart('Wrogn Men Low Cut Socks', 1199)">Add to Cart</button>
+            </div>
+            <!-- Product 11 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOTS9062M/1.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WOTS9062M/1.jpeg')">
+                <h3>Wrogn Men Blue Solid Slim Fit Round Neck T-Shirts</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹699</p>
+                <button onclick="addToCart('Wrogn Men Blue Solid Slim Fit Round Neck T-Shirts', 699)">Add to Cart</button>
+            </div>
+            <!-- Product 12 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPSH0167S.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WPSH0167S.jpeg')">
+                <h3>Olive green jacket for men</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1600</p>
+                <button onclick="addToCart('Olive green jacket for men', 1600)">Add to Cart</button>
+            </div>
+            <!-- Product 13 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail_zoom/WDTS0855/1.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail_zoom/WDTS0855/1.jpeg')">
+                <h3>Wrogn Men Navy Solid T Shirt</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹999</p>
+                <button onclick="addToCart('Wrogn Men Navy Solid T Shirt',999)">Add to Cart</button>
+            </div>
+            <!-- Product 13 -->
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WHTR1366.jpeg" alt="Shirt 2"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_list/WHTR1366.jpeg')">
+                <h3>Wrogn Men Black Yarn Dyed Checks Trouser</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1259</p>
+                <button onclick="addToCart('Wrogn Men Black Yarn Dyed Checks Trouser', 1259)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR830HdkTHpRJXUUAT5mcp2pfYyPPpS3MyCQA&usqp=CAU"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR830HdkTHpRJXUUAT5mcp2pfYyPPpS3MyCQA&usqp=CAU')">
+                <h3>Wrogn Men charcoal slim fit tshirt Round Neck</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1255</p>
+                <button onclick="addToCart('Wrogn Men charcoal slim fit tshirt Round Neck',1255)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WHTS0286/2.jpeg"onclick="showImageModal('https://usplworld-static.s3.ap-south-1.amazonaws.com/static/img/wrogn/products/product_detail/WHTS0286/2.jpeg')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1999</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/t_shirt.webp"onclick="showImageModal('https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/t_shirt.webp')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1399</p>
+
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1399)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/jsc3ssw0/t-shirt/f/f/j/m-2478315-wrogn-original-imafdwrfg4fz2zdy.jpeg?q=90"onclick="showImageModal('https://rukminim2.flixcart.com/image/850/1000/jsc3ssw0/t-shirt/f/f/j/m-2478315-wrogn-original-imafdwrfg4fz2zdy.jpeg?q=90')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1559</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger',1559)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/g/f/y/l-22147764-wrogn-original-imagpu35mgjtwv6c.jpeg?q=90"onclick="showImageModal('https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/g/f/y/l-22147764-wrogn-original-imagpu35mgjtwv6c.jpeg?q=90')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1299</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrDP_lL7k8D-2l4NsEpcCldTEeCtjOjl_xCc6GGvwKEN7GL7q8BbkNok1XIDOGetSh0s&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrDP_lL7k8D-2l4NsEpcCldTEeCtjOjl_xCc6GGvwKEN7GL7q8BbkNok1XIDOGetSh0s&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1458</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14161026/2021/8/24/efeaa284-6cfb-4c04-bafb-246f419c31a61629779799682-WROGN-Men-Shirts-4501629779799167-1.jpg" alt="Shirt 2"onclick="showImageModal('https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/14161026/2021/8/24/efeaa284-6cfb-4c04-bafb-246f419c31a61629779799682-WROGN-Men-Shirts-4501629779799167-1.jpg')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1855</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1855)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAOP8d4e5TtnMHbv1PM5YSVzE0ImiCHCpUL1eGf6m1HfmDHu2qb3C_-UMWewRGcZyripY&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAOP8d4e5TtnMHbv1PM5YSVzE0ImiCHCpUL1eGf6m1HfmDHu2qb3C_-UMWewRGcZyripY&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1233</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1233)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/c/i/t/-original-imaghq24bfpwpvhy.jpeg?q=20" alt="Shirt 2"onclick="showImageModal('https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/c/i/t/-original-imaghq24bfpwpvhy.jpeg?q=20')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price:₹1500 </p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger',1500)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3JQPIbdAp2nBo4FV5QUIbjAxENoZ6gvxIAYmYTXzAiaUccJ0EZq3yPx7pAWWj_U4QpiU&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3JQPIbdAp2nBo4FV5QUIbjAxENoZ6gvxIAYmYTXzAiaUccJ0EZq3yPx7pAWWj_U4QpiU&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1500 </p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger',1499)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://static-assets-web.flixcart.com/fk-p-transcode-video/autostitch/shirt/SHTG6Q2USAD4ZU27_1662395480/manifest.jpg?q=20" alt="Shirt 2"onclick="showImageModal('https://static-assets-web.flixcart.com/fk-p-transcode-video/autostitch/shirt/SHTG6Q2USAD4ZU27_1662395480/manifest.jpg?q=20')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price₹1499:</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1499)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuJ0Z4aGmTUGKVVYU_ootfIvMJRiQScWKAA&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFuJ0Z4aGmTUGKVVYU_ootfIvMJRiQScWKAA&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1499 </p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/1729391/2019/8/28/a9d4a7aa-af7e-4a37-a9d4-a94dc8c057e81566992341974-WROGN-Navy-Blue-Slim-Fit-Checked-Casual-Shirt-52415669923403-1.jpg" alt="Shirt 2"onclick="showImageModal('https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/1729391/2019/8/28/a9d4a7aa-af7e-4a37-a9d4-a94dc8c057e81566992341974-WROGN-Navy-Blue-Slim-Fit-Checked-Casual-Shirt-52415669923403-1.jpg')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1299</p>
+                <button onclick="addToCart('Product Name 3', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRteDfdLMudQGND9aD3ZbTZ60Maq_trrigctzG6wmNUTHO5jlojRRX3CRno5zpL1Yd3ruA&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRteDfdLMudQGND9aD3ZbTZ60Maq_trrigctzG6wmNUTHO5jlojRRX3CRno5zpL1Yd3ruA&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: ₹1101</p>
+                <button onclick="addToCart('Wrogn Men Grey Solid Jogger', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYeC_hWDu0K1ArzfhTpiFACT-R_XRFNszdaShwqgF9Z6-qP2OfnfYUpBib4sdcMKtM_k&usqp=CAU" alt="Shirt 2"onclick="showImageModal('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAYeC_hWDu0K1ArzfhTpiFACT-R_XRFNszdaShwqgF9Z6-qP2OfnfYUpBib4sdcMKtM_k&usqp=CAU')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: $22.01</p>
+                <button onclick="addToCart('Product Name 3', 1299)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim1.flixcart.com/image/850/1000/koixwnk0/shirt/t/a/j/46-2478263-wrogn-original-imag2ygavdgg7mtf.jpeg?q=20" alt="Shirt 2"onclick="showImageModal('https://rukminim1.flixcart.com/image/850/1000/koixwnk0/shirt/t/a/j/46-2478263-wrogn-original-imag2ygavdgg7mtf.jpeg?q=20')">
+                <h3>Wrogn Men Grey Solid Jogger</h3>
+                <p>Description: Another cool shirt.</p>
+                <p>Price: $25.99</p>
+                <button onclick="addToCart('Product Name 3', 1299)">Add to Cart</button>
+            </div>
+            <!-- Add more products here -->
+        </section>
+    </div>
+    <script>
+        function addToCart(productName, price) {
+            const cartItem = { productName, price };
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(cartItem);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cart-list');
+            const totalElement = document.getElementById('total');
+            const quantityElement = document.getElementById('quantity');
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cartList.innerHTML = ''; // Clear the cart list
+
+            let total = 0;
+            for (let i = 0; i < cart.length; i++) {
+                const item = cart[i];
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.productName} - ₹${item.price}`;
+                
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.onclick = function() {
+                    removeFromCart(i);
+                };
+                
+                listItem.appendChild(removeButton);
+                cartList.appendChild(listItem);
+                total += parseFloat(item.price);
+            }
+
+            totalElement.textContent = total.toFixed(2);
+            quantityElement.textContent = cart.length;
+        }
+
+        
+        function showImageModal(imageUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageUrl;
+            modal.style.display = 'block';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Update the cart display when the page loads
+        updateCartDisplay();
+    </script>
+</body>
+</html>
