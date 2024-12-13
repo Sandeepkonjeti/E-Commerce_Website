@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NSKY Online Shopping</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <!-- Ad container -->
+    <header>
+        <h1> NSKY Online Shopping</h1>
+        <nav>
+            <a href="index2.html">Home</a>
+            <a href="product2.html">Products</a>
+            <a href="cart2.html">Cart</a>
+        </nav>
+    </header>
+    <div id="ad-container">
+        <div class="ad-content">
+            <img class="ad-image" src="NSKY1stan.jpeg" alt="Advertisement 1">
+            <img class="ad-image" src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/homepage_banner/AUDI-WEBSITE-BANNER_SV72PLa.jpg" alt="Advertisement 2">
+            <img class="ad-image" src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/homepage_banner/INNERWEAR-WEBSITE-BANNER.webp" alt="Advertisement 3">
+            <img class="ad-image" src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/homepage_banner/WROGN-TUNE-BANNER.webp" alt="Advertisement 4">
+            <!-- Add more ad images as needed -->
+        </div>
+        <div class="nav-button prev-button" onclick="prevAd()">&#9664;</div>
+        <div class="nav-button next-button" onclick="nextAd()">&#9654;</div>
+    </div>
+
+    <!-- Rest of your homepage content goes here -->
+    <!-- Add product listings, categories, and other content -->
+    
+    <!-- Footer section goes here -->
+
+    <div class="container-center">
+        <div class="category-container">
+            <ul class="category-list">
+                <li class="category">
+                    
+                    <img src="https://www.jiomart.com/images/product/original/rv28zflunt/inchh-men-s-cotton-round-neck-colour-block-half-sleeve-t-shirt-product-images-rv28zflunt-0-202207250225.jpg?im=Resize=(500,630)"onclick="window.location.href ='tshirts.html'" alt="Category 1 Image">
+                    <h3>T-shirts</h3>
+                </li>
+                <li class="category">
+                    
+                    <img src="https://rmkv.com/pub/media/catalog/product/cache/3899b28c59efbdc44b1062cd9d5f8b6b/s/h/sh2002-1676_x_2012_thumb_1.jpg" onclick="window.location.href ='shirts.html'" alt="Category 2 Image">
+                    <h3>Shirts</h3>
+                </li>
+                <li class="category">
+                    <img src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/jeans_zLmbNxi.webp" onclick="window.location.href ='jeans.html'"alt="Category 3 Image">
+                    <h3>Jeans</h3>
+                </li>
+                <li class="category">
+                    
+                    <img src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/sweatshirt.webp"  onclick="window.location.href ='sweatshirts.html'"alt="Category 4 Image">
+                    <h3>Sweat Shirts</h3>
+                </li>
+                <li class="category">
+                    
+                    <img src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/joggers_X4OUb1k.webp" alt="Category 5 Image">
+                    <h3>Joggers</h3>
+                </li>
+                <li class="category">
+                    
+                    <img src="https://d3tdx3c7l2rexw.cloudfront.net/media/img/page_section/wrogn/top_categories/shoes_94FSptv.webp" alt="Category 5 Image">
+                    <h3>Footwear</h3>
+                </li>
+                <li class="category">
+                    
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT95_VtRQJVbCff13fWLIpAtMJXvwIBbJa3FLE8wWGc5gh93L6cQDt9226sy0i90KGv98I&usqp=CAU" alt="Category 5 Image">
+                    <h3>Perfumes</h3>
+                </li>
+                <!-- Add more categories with one image each as needed -->
+            </ul>
+        </div>
+    </div>
+
+  
+    <div class="container">
+        
+
+        <section class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-list"></ul>
+            <p>Total: ₹<span id="total">0.00</span></p>
+            <p>Quantity: <span id="quantity">0</span></p>
+
+            <button class="signup-btn" type="button" onclick="window.location.href ='pay.html'">Buy Now</button>
+        </section>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImage" src="" alt="Enlarged Image">
+    </div>
+
+    <footer>
+        <p>All copy rights &copy; reserved Sandeep</p>
+    </footer>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>

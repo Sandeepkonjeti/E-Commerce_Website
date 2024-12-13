@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Website</title>
+    <link rel="stylesheet" href="./styles/cart.css">
+</head>
+<body>
+
+    <header>
+        <h1> NSKY Online Shopping</h1>
+        <nav>
+            <a href="index2.html">Home</a>
+            <a href="product2.html">Products</a>
+            <a href="cart2.html">Cart</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-list"></ul>
+            <p>Total: ₹<span id="total">0.00</span></p>
+            <p>Quantity: <span id="quantity">0</span></p>
+            <button id="checkout"onclick="window.location.href ='pay.html'">Checkout</button>
+
+        </section>
+    </div>
+    <footer>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Thank You for Shopping</title>
+        </head>
+        <body>
+            <!-- Your webpage content goes here -->
+            
+            <!-- Thank you message at the bottom -->
+            <div style="text-align: center; background-color: #f0f0f0; padding: 10px;">
+                <p>Thank you for shopping with us! 😀</p>
+            </div>
+        </body>
+        </html>
+        
+    </footer>
+    <script src="./scripts/cart.js"></script>
+</body>
+</html>

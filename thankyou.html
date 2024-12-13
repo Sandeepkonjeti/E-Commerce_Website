@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Page Overlay Button</title>
+    <style>
+        /* Style for the full-page overlay button */
+        .overlay-button {
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            z-index: 999; /* Place it above other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 1000px 1000px;
+            background: linear-gradient(to right, #b1b1b1, #838a93);
+
+             /* Button background color */
+            color: #fff; /* Button text color */
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your page content goes here -->
+
+    <!-- Full-page overlay button -->
+    <div class="overlay-button" id="overlayButton">
+        <button class="button" onclick="window.location.href ='product2.html'"><!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Welcome Page with Moving Letters</title>
+                <style>
+                    body {
+                        font-family: 'Montserrat', sans-serif;
+                        background:#b1b1b1,#838a93;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                    }
+                    body{
+                    min-height: 100vh;
+                    background: linear-gradient(to right, #b1b1b1, #838a93);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: 'Poppins', sans-serif;
+                    }
+                    .criterion {
+                        font-size: 4 rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+            
+                    .background {
+                        display: inline-block;
+                        animation: move-letters 1s linear 1 alternate;
+                    }
+            
+                    @keyframes move-letters {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        25% {
+                            transform: translateY(-10px);
+                        }
+                        50% {
+                            transform: translateY(0);
+                        }
+                        75% {
+                            transform: translateY(10px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
+            
+                    .rainbow-strip {
+                        background: linear-gradient(to right,#b1b1b1,#838a93);
+                        background-size: 150% 100%;
+                        animation: rainbow-strip-animation 3s 1 alternate;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                        display: inline-block;
+                    }
+            
+                    @keyframes rainbow-strip-animation {
+                        0% {
+                            background-position: 100% 0;
+                        }
+                        100% {
+                            background-position: -100% 0;
+                        }
+                    }
+            
+                    .moving-words {
+                        font-size: 4rem;
+                        margin-top: 20px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+            
+                    .word {
+                        display: inline-block;
+                        animation: move-words 5s linear 1, hide-words 2s ease 1 alternate;
+                    }
+            
+                    @keyframes move-words {
+                        0% {
+                            transform: translateY(100%);
+                        }
+                        100% {
+                            transform: translateY(-100%);
+                        }
+                    }
+            
+                    @keyframes hide-words {
+                        0%, 100% {
+                            opacity: 1;
+                        }
+                        50% {
+                            opacity: 0;
+                        }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <p class="moving-words">
+                        <span class="word">T</span>
+                        <span class="word">H</span>
+                        <span class="word">A</span>
+                        <span class="word">N</span>
+                        <span class="word">K</span>
+                        <span class="word">Y</span>
+                        <span class="word">O</span>
+                        <span class="word">U</span>
+                        <span class="word">:</span>
+                        <span class="word">)</span>
+                    </p>
+                </div>
+            </body>
+            </html>
+            </button>
+    </div>
+
+    <script>
+        // Function to redirect to another page when the button is clicked
+        function redirectToAnotherPage() {
+            window.location.href = 'target_page.html'; // Replace with the actual target page URL
+        }
+    </script>
+</body>
+</html>

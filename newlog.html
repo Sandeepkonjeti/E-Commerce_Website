@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');</style>
+<link rel="stylesheet" href="./styles/login.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Flip login Registration Form</title>
+</head>
+<body>
+    <div class="container front">
+        <div class="top">
+            <span>NSKY🛍️</span>
+        </div>
+        <div class="form">
+            <form>
+                <div class="inputBox inputBoxFront">
+                    <label><i class="fa-solid fa-user"></i></label>
+                    <input type="text" placeholder="Username" class="input" required>
+                </div>
+                <div class="inputBox inputBoxFront">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Password" class="input" required>
+                </div>
+                <button type="submit" class="btn" onclick="window.location.href ='index2.html'">Log in</button>
+                <div class="user">New user? <span class="newUser">Sign Up</span></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- --------------------------- back ---------------------------------- -->
+
+    <div class="container back">
+        <div class="top topBack">
+            <span>NSKY🛍️</span>
+        </div>
+        <div class="form formBack">
+            <form>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-t"></i></label>
+                    <input type="text" placeholder="Name" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" placeholder="Email id" class="input" required>
+                </div>
+                <div class="inputBox inputBoxBack">
+                    <label><i class="fa-solid fa-user"></i></label>
+                    <input type="text" placeholder="Username" class="input" required>
+                </div>
+                <div class="inputBox inputBoxback">
+                    <label><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" placeholder="Password" class="input" required>
+                </div>
+                <button type="submit" class="btn btnBack" onclick="window.location.href ='index2.html'">Sign Up</button>
+
+                <div class="user userBack">Existing user? <span class="existingUser" >log In</span></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./scripts/login.js"></script>
+</body>
+
+</html>

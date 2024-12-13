@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="./styles/payment.css">
+</head>
+<body>
+    <h1>Choose Your Payment Method</h1>
+    <form action="process_payment.php" method="post">
+        <p>Select Payment Method:</p>
+
+        <!-- Radio buttons for payment method selection -->
+        <input type="radio" id="cash_on_delivery" name="payment_method" value="cash_on_delivery" required>
+        <label for="cash_on_delivery">Cash on Delivery</label><br>
+
+        <input type="radio" id="online_payment" name="payment_method" value="online_payment" required>
+        <label for="online_payment">Online Payment</label><br>
+
+        <!-- Online payment fields (hidden by default) -->
+        <div id="online_payment_fields" style="display:none;">
+            <p>Online Payment Details:</p>
+            <!-- Add your online payment fields here, such as credit card information, PayPal, etc. -->
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number"><br>
+
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="text" id="expiry_date" name="expiry_date"><br>
+        </div>
+
+        <!-- Cash on Delivery fields (hidden by default) -->
+        <div id="cash_on_delivery_fields" style="display:none;">
+            <p>Cash on Delivery Details:</p>
+            <!-- Add any relevant COD fields here, such as delivery address, contact info, etc. -->
+            <label for="delivery_address">Delivery Address:</label>
+            <textarea id="delivery_address" name="delivery_address" rows="4" cols="50"></textarea><br>
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" onclick="window.location.href ='thankyou.html'" value="Submit">
+        
+    </form>
+    <div style="text-align: center; background-color: #f0f0f0; padding: 10px;">
+                <p>Thank you for shopping with us! 😀</p>
+            </div>
+
+    <script src="./scripts/payment.js">
+       
+    </script>
+</body>
+</html>
